@@ -51,6 +51,32 @@ What changed in each version is listed below; the full history and downloads are
 <div className="timeline">
 
 <section className="tl-item">
+<div className="tl-meta"><time>2026-10-01</time><span className="tl-tag">Stable</span></div>
+
+## MapleLink v0.6.3 {#v0-6-3}
+
+**New**
+
+- A GamaPass tab in the toolbox. GamaPass passkeys can be answered by the Bitwarden browser extension, which the app downloads and sets up on first selection; a locked vault shows Bitwarden's own unlock window, just as in a browser (1Password, Proton Pass and NordPass are in development)
+
+**Improved**
+
+- Under the game's extended UI mode, auto-paste locates the account field from the login screen's actual size; once the window has been stretched, the second and later logins no longer put the OTP in the account field
+
+**Fixed**
+
+- After signing in, pressing + and switching TW/HK listed the saved accounts of the other region, and choosing one signed in to the wrong region
+- When a setting could not be written to disk, the app kept the new value internally while the screen showed the old one
+
+**Other**
+
+- Dependency updates that clear every open npm advisory
+
+<p className="tl-links"><a href="https://github.com/lshw54/maplelink/releases/tag/v0.6.3">GitHub Releases: v0.6.3</a></p>
+
+</section>
+
+<section className="tl-item">
 <div className="tl-meta"><time>2026-09-23</time><span className="tl-tag">Stable</span></div>
 
 ## MapleLink v0.6.2 {#v0-6-2}

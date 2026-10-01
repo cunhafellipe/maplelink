@@ -51,6 +51,32 @@ MapleLink 目前與原版 Beanfun 維持雙線並行開發，旨在為玩家提�
 <div className="timeline">
 
 <section className="tl-item">
+<div className="tl-meta"><time>2026-10-01</time><span className="tl-tag">正式版</span></div>
+
+## MapleLink v0.6.3 {#v0-6-3}
+
+**新功能**
+
+- 工具箱新增「GamaPass」分頁。GamaPass 的 Passkey 可改由 Bitwarden 瀏覽器擴充功能回應，首次選擇時程式會自動下載並完成設定；保管庫處於鎖定狀態時，會顯示 Bitwarden 的解鎖視窗，操作方式與瀏覽器相同（1Password、Proton Pass、NordPass 尚在開發中）
+
+**改進**
+
+- 自動貼上在遊戲的擴展 UI 模式下，改以登入畫面的實際尺寸定位帳號欄；視窗經拉伸後，第二次及其後的登入不會再將 OTP 填入帳號欄
+
+**修正**
+
+- 登入後按「+」並切換 TW／HK 時，帳號下拉清單列出另一地區的帳號，選取後會以錯誤的地區登入
+- 設定寫入磁碟失敗時，程式內部仍保留新值，與畫面顯示不一致
+
+**其他**
+
+- 更新相依套件，清除所有 npm 安全通報
+
+<p className="tl-links"><a href="https://github.com/lshw54/maplelink/releases/tag/v0.6.3">GitHub Releases：v0.6.3</a></p>
+
+</section>
+
+<section className="tl-item">
 <div className="tl-meta"><time>2026-09-23</time><span className="tl-tag">正式版</span></div>
 
 ## MapleLink v0.6.2 {#v0-6-2}

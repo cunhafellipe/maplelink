@@ -24,6 +24,16 @@ export function noticeKind(n: Notice): "notice" | "update" {
 
 export const NOTICES: Notice[] = [
   {
+    id: "v0-6-3",
+    date: "2026-10",
+    kind: "update",
+    title: {
+      "zh-TW": "MapleLink v0.6.3：GamaPass Passkey 可由 Bitwarden 回應、擴展 UI 模式下的自動貼上修正、切換地區後的帳號清單修正。",
+      "zh-CN": "MapleLink v0.6.3：GamaPass Passkey 可由 Bitwarden 响应、扩展 UI 模式下的自动粘贴修正、切换地区后的账号列表修正。",
+      en: "MapleLink v0.6.3: GamaPass passkeys answered by Bitwarden, auto-paste fixed under extended UI mode, and the account list after a region switch fixed.",
+    },
+  },
+  {
     id: "v0-6-2",
     date: "2026-09",
     kind: "update",
