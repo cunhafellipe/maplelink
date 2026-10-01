@@ -4,17 +4,26 @@ import { useUiStore } from "../../lib/stores/ui-store";
 import { useConfigStore } from "../../lib/stores/config-store";
 import { ToolsTab } from "./ToolsTab";
 import { AccountManagerTab } from "./AccountManagerTab";
+import { GamaPassTab } from "./GamaPassTab";
 import { SettingsTab } from "./SettingsTab";
 import { AdvancedTab } from "./AdvancedTab";
 import { AboutTab } from "./AboutTab";
 import { AnnouncementsTab } from "./AnnouncementsTab";
 
-type ToolboxTab = "tools" | "account_manager" | "settings" | "advanced" | "announcements" | "about";
+type ToolboxTab =
+  | "tools"
+  | "account_manager"
+  | "gamapass"
+  | "settings"
+  | "advanced"
+  | "announcements"
+  | "about";
 
 const TABS: { key: ToolboxTab; labelKey: string; icon: string }[] = [
   { key: "tools", labelKey: "toolbox.tabs.tools", icon: "🛠" },
   { key: "announcements", labelKey: "toolbox.tabs.announcements", icon: "📢" },
   { key: "account_manager", labelKey: "toolbox.tabs.account_manager", icon: "👤" },
+  { key: "gamapass", labelKey: "toolbox.tabs.gamapass", icon: "🔑" },
   { key: "settings", labelKey: "toolbox.tabs.settings", icon: "⚙" },
   { key: "advanced", labelKey: "toolbox.tabs.advanced", icon: "🔧" },
   { key: "about", labelKey: "toolbox.tabs.about", icon: "ℹ" },
@@ -42,14 +51,20 @@ export function ToolboxPage() {
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               title={t(tab.labelKey)}
-              className={`mx-1.5 my-0.5 flex flex-col items-center gap-0.5 rounded-lg px-1 py-1.5 text-[9px] font-semibold tracking-[0.3px] transition-all hover:bg-[var(--surface)] hover:text-[var(--text)] ${
+              className={`mx-1.5 my-0.5 flex flex-col items-center gap-0.5 rounded-lg px-0.5 py-1.5 text-[9px] font-semibold tracking-[0.3px] transition-all hover:bg-[var(--surface)] hover:text-[var(--text)] ${
                 activeTab === tab.key
                   ? "bg-[rgba(var(--accent-rgb),0.1)] text-accent shadow-[inset_0_0_0_1px_rgba(var(--accent-rgb),0.25)]"
                   : "text-text-dim"
               }`}
             >
               <span className="text-[15px] leading-none">{tab.icon}</span>
-              <span className="w-full truncate text-center leading-tight">{t(tab.labelKey)}</span>
+              <span
+                className={`w-full truncate text-center leading-tight tracking-normal ${
+                  t(tab.labelKey).length > 5 ? "text-[8px]" : ""
+                }`}
+              >
+                {t(tab.labelKey)}
+              </span>
             </button>
           ) : (
             <button
@@ -87,6 +102,7 @@ export function ToolboxPage() {
       <div className="flex-1 overflow-y-auto p-4">
         {activeTab === "tools" && <ToolsTab />}
         {activeTab === "account_manager" && <AccountManagerTab />}
+        {activeTab === "gamapass" && <GamaPassTab />}
         {activeTab === "settings" && <SettingsTab />}
         {activeTab === "advanced" && <AdvancedTab />}
         {activeTab === "announcements" && <AnnouncementsTab />}
